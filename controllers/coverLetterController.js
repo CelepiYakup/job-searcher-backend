@@ -9,7 +9,8 @@ const generateCoverLetter = async (req, res) => {
   const { jobDescription, userProfile } = req.body;
   try {
     const response = await openai.chat.completions.create({
-      model: "text-davinci-003",
+      //"model can be used from": "gpt-3.5-turbo",
+      model: "gpt-3.5-turbo",
       messages: [
         { role: "system", content: "You are an expert cover letter writer." },
         { role: "user", content: `Job Description: ${jobDescription}\nUser Profile: ${userProfile}\nWrite a cover letter for the user for this job.` }
