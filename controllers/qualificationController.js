@@ -4,7 +4,6 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-
 const checkQualification = async (req, res) => {
   const { jobDescription, userProfile } = req.body;
   try {

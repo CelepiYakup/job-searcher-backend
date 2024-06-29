@@ -4,12 +4,10 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-
 const generateCoverLetter = async (req, res) => {
   const { jobDescription, userProfile } = req.body;
   try {
     const response = await openai.chat.completions.create({
-      //"model can be used from": "gpt-3.5-turbo",
       model: "gpt-3.5-turbo",
       messages: [
         { role: "system", content: "You are an expert cover letter writer." },
